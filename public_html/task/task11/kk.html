@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	JQUERRY </title>
+	<link rel="stylesheet" type="text/css" href="task11.css">
+	<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="products">
+
+			<div class="product" data-divid=3>
+				<div class="product-data">
+					<img src="images/basketball.png" class="product-image">
+					<a href="#"><h2 class="product-title">Basket Ball</h2></a>
+					<p>
+						$<span class="product-price">150</span>
+					</p>
+					<input type="button" class="add-to-cart" value="Add To Cart" data-id=3>
+				</div>
+				<div class="product-meta">
+					<input type="button" class="product-availability in-stock" value="In Stock">
+				</div>
+			</div>
+
+			<div class="product" data-divid=1>
+				<div class="product-data" >
+					<img src="images/football.png" class="product-image">
+					<a href="#"><h2 class="product-title">Football</h2></a>
+					<p>
+						$<span class="product-price">120</span>
+					</p>
+					<input type="button" class="add-to-cart" value="Add To Cart" data-id=1>
+				</div>
+				<div class="product-meta">
+					<input type="button" class="product-availability in-stock" value="In Stock">
+				</div>
+			</div>
+			<div class="product" data-divid=5>
+				<div class="product-data">
+					<img src="images/soccer.png" class="product-image">
+					<a href="#"><h2 class="product-title">Soccer</h2></a>
+					<p>
+						$<span class="product-price">140</span>
+					</p>
+					<input type="button" class="add-to-cart" value="Add To Cart" data-id=5>
+				</div>
+				<div class="product-meta">
+					<input type="button" class="product-availability in-stock" value="In Stock">
+				</div>
+			</div>
+			<div class="product" data-divid=4>
+				<div class="product-data">
+					<img src="images/table-tennis.png" class="product-image">
+					<a href="#"><h2 class="product-title">Table Tennis</h2></a>
+					<p>
+						$<span class="product-price">130</span>
+					</p>
+					<input type="button" class="add-to-cart" value="Add To Cart" data-id=4>
+				</div>
+				<div class="product-meta">
+					<input type="button" class="product-availability in-stock" value="In Stock">
+				</div>
+			</div>
+			<div class="product" data-divid=2>
+				<div class="product-data">
+					<img src="images/tennis.png" class="product-image">
+					<a href="#"><h2 class="product-title">Tennis</h2></a>
+					<p>
+						$<span class="product-price">100</span>
+					</p>
+					<input type="button" class="add-to-cart" value="Add To Cart" data-id=2>
+				</div>
+				<div class="product-meta">
+					<input type="button" class="product-availability in-stock" value="In Stock">
+				</div>
+			</div>
+		</div>
+		<div id="cart"></div>
+	</div>	
+	
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$(".add-to-cart").click(function(){
+
+				$(this).parent().parent().find(".product-meta").find(".in-stock").css("background-color","red");
+				$(this).parent().parent().find(".product-meta").find(".in-stock").val("Out of Stock");
+				
+				  $.ajax({
+				  method: "POST",
+				  url: "kk.php",
+				  data: {id: $(this).data('id') },
+				  dataType: "json"
+				})
+				  .done(function(data) {
+
+
+				  	var html=  "<table id='tablenew'><tr>\
+								<th>ID</th>\
+								<th>Name</th>\
+								<th>Price</th>\
+								<th>Image</th>\
+								<th>Action</th></tr>";
+
+				  	for (var i = 0; i < data.cart.length; i++)
+					  {
+						html+= "<tr><td>"+data.cart[i].id+"</td>\
+							  		<td>"+data.cart[i].name+"</td>\
+							  		<td>"+data.cart[i].price+"</td>\
+							  		<td><img src='images/"+data.cart[i].image+"'></td>\
+							  		<td><a href='#' data-id='"+data.cart[i].id+"' class='remove'>Remove</a></td></tr>";
+					  }
+
+					html+= "</table>"
+
+					$("#cart").html(html);
+
+				});
+
+			});
+				
+
+			$(document).on('click','.remove', function(x){
+
+				x.preventDefault();
+				var dvd= $(this).data('id');
+				
+
+				$(this).parents().find("[data-divid='"+dvd+"']").find(".product-meta").find(".in-stock").css("background-color","");
+				$(this).parents().find("[data-divid='"+dvd+"']").find(".product-meta").find(".in-stock").val("In Stock");
+			
+
+				$.ajax({
+				  method: "POST",
+				  url: "kk.php",
+				  data: {did: $(this).data('id') },
+				  dataType: "json"
+				})
+
+				.done(function(data){
+
+					
+
+
+					var html=  "<table id='table'><tr>\
+								<th>ID</th>\
+								<th>Name</th>\
+								<th>Price</th>\
+								<th>Image</th>\
+								<th>Action</th></tr>";
+
+				  	for (var i = 0; i < data.cart.length; i++)
+					  {
+						html+= "<tr><td>"+data.cart[i].id+"</td>\
+							  		<td>"+data.cart[i].name+"</td>\
+							  		<td>"+data.cart[i].price+"</td>\
+							  		<td><img src='images/"+data.cart[i].image+"'></td>\
+							  		<td><a href='#' data-id='"+data.cart[i].id+"' class='remove'>Remove</a></td></tr>";
+					  }
+
+					html+= "</table>"
+
+					$("#cart").html(html);
+
+				});
+
+
+
+
+
+
+			});
+
+
+
+			
+		});
+	</script>
+</body>
+</html>

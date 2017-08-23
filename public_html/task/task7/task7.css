@@ -1,0 +1,29 @@
+
+#main
+{
+	margin:0px auto;
+	background-color: grey;
+	width:15%;
+	border:2px solid black;
+	margin-top: 100px;
+	height:300px;
+}
+#main #show
+{
+	background-color:white;
+	padding-left: 29px;
+
+#main tr  
+width:15px;
+height:60px;
+border-radius:8px;
+margin:3px;
+
+#main td
+width:20px;
+height:60px;
+border-radius:8px;
+margin:3px
+
+
+ 

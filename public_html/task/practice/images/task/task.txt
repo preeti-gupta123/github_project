@@ -1,0 +1,7 @@
+1. clicking on "In Stock" button should toggle label on input button to "Sold Out" and change background color to red. Again when we click that button it should toggle label on input button to "In Stock" and change background color to green.
+(use in-stock and sold-out classes in style.css)
+
+2. clicking on "Add To Cart" button appends product in cart div and add a remove button to remove that item from cart.
+
+3. calculate total cart amount.
+

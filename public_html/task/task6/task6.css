@@ -1,0 +1,14 @@
+table{
+    width: 60%;
+    margin: 0px auto%;
+    color:black;
+    background-color: gray;
+    border:3px solid black;
+
+   
+}
+
+th{
+    text-align: left;
+ 
+}
