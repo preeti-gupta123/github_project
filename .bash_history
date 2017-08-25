@@ -55,3 +55,20 @@ git rm -r folder_name
 git rm -r --cached git
 git rm -r --cached git hub
 git rm -r --git hub
+git status
+mkdir git hub
+mkdir taskgit
+git init
+git clone task1
+git clone https://github.com/YOUR-preeti-gupta123/YOUR-task1
+git clone https://github.com/YOUR-preeti-gupta123/YOUR-store
+git clone https://github.com/YOUR-preeti-gupta123/YOUR-store.git
+https://github.com/preeti-gupta123/store.git
+git clone https://github.com/preeti-gupta123/store.git
+git ignore
+touch .gitignore
+uploads/*
+git add .
+git commit -m "initial-commit"
+git push -u origin master
+git status
