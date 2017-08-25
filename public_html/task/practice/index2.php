@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="resources/css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="resources/css/style.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="resources/css/invalid.css" type="text/css" media="screen" />	
-<script type="text/javascript" src="resources/scripts/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="resources/scripts/jquery.js"></script>
 <script type="text/javascript" src="resources/scripts/simpla.jquery.configuration.js"></script>
 <script type="text/javascript" src="resources/scripts/facebox.js"></script>
 <script type="text/javascript" src="resources/scripts/jquery.wysiwyg.js"></script>
@@ -389,6 +389,9 @@
 					Error notification. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate, sapien quis fermentum luctus, libero.
 				</div>
 			</div>
+			
+			<!-- End Notifications -->
+
 
 			<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
 			
@@ -406,7 +409,7 @@
 			
 			<ul id="main-nav">  <!-- Accordion Menu -->
 				
-				<li>
+			<li>
 					<a href="http://www.google.com/" class="nav-top-item no-submenu"> <!-- Add the class "no-submenu" to menu items with no sub menu -->
 						Dashboard
 					</a>       
@@ -519,8 +522,6 @@
 			</div> <!-- End #messages -->
 			
 		</div></div> <!-- End #sidebar -->
-			
-			<!-- End Notifications -->
 			
 			<div id="footer">
 				<small> <!-- Remove this notice or replace it with whatever you want -->

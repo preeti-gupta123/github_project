@@ -3,20 +3,20 @@
 <?php
  include("config.php");
 
-if(isset($_GET['dlid']))
+if(isset($_GET['delete']))
 {
 	echo "<script type='text/javascript'>";
 	echo "alert('Deleted Successfully')";
 	echo "</script>";
 
-		$id_to_delete=$_GET['dlid'];
+		$id_to_delete=$_GET['delete'];
 		$stmt=$conn->prepare("DELETE FROM store WHERE id=?");
 		$stmt->bind_param("i",$id_to_delete);
 		$stmt->execute();
 
 	}
 
-	$stmt=$conn->prepare("SELECT COUNT(*) FROM store");
+$stmt=$conn->prepare("SELECT COUNT(*) FROM store");
 	$stmt->bind_result($num_rows);
 	$limit_page=4;
 	$offset=0;
@@ -43,7 +43,12 @@ if(isset($_GET['dlid']))
 	}
 
 
-/////////////////////// SSSSSHHHHHOOOOOOWWWWW PPPPPPAAAAAARRRRRRTTTTT////////////
+
+
+
+	
+
+
  $products=array();
 
  $stmt=$conn->prepare("SELECT * FROM store LIMIT ?,?");
@@ -58,22 +63,6 @@ if(isset($_GET['dlid']))
 
  $stmt->close();
  $conn->close();
-
-
-
-//$products=array();
-
- //$stmt=$conn->prepare("SELECT * FROM store");
- //$stmt->execute();
-
- //$stmt->bind_result($id,$name,$price,$image,$category);
- //while($stmt->fetch())
- //{
- 	//array_push($products,array("id"=>$id,"name"=>$name,"price"=>$price,"image"=>$image,"dropdown"=>$category));
- //}
-
- //$stmt->close();
- //$conn->close();
 
 ?>
 
@@ -175,8 +164,7 @@ if(isset($_GET['dlid']))
 										
 										<div class="pagination">
 
-
-											<?php for($i=1;$i<=$total_pages;$i++)
+										<?php for($i=1;$i<=$total_pages;$i++)
 											{
 
 
@@ -184,10 +172,7 @@ if(isset($_GET['dlid']))
 
 
 											} ?>
-
 											</div>
-
-
 										<!--	<a href="#" title="First Page">&laquo; First</a><a href="#" title="Previous Page">&laquo; Previous</a>
 											<a href="#" class="number" title="1">1</a>
 											<a href="#" class="number" title="2">2</a>
@@ -216,7 +201,7 @@ if(isset($_GET['dlid']))
 									<td>
 										<!-- Icons -->
 										 <a href="addproduct.php?edit=<?php echo $value['id']; ?>" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
-										 <a href="manage.php?dlid=<?php echo $value['id']; ?>"  title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
+										 <a href="manage.php?delete=<?php echo $value['id']; ?>"  title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
 										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
 									</td>
 								

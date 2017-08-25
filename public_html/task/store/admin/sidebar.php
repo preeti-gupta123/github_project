@@ -73,10 +73,10 @@
 						Categories
 					</a>
 					<ul>
-				<!--	<li><a href="#">Dresses</a></li>
+					<li><a href="#">Dresses</a></li>
 						<li><a href="#">Cosmetics</a></li>
 						<li><a href="#">Sports</a></li>
-						<li><a href="#">Mobiles</a></li>-->
+						<li><a href="#">Mobiles</a></li>
 					</ul>
 					
 				</li>
