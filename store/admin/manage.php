@@ -16,9 +16,19 @@ if(isset($_GET['dlid']))
 
 	}
 
+
+
+
+
+
+
+
+
+
 $stmt=$conn->prepare("SELECT COUNT(*) FROM store");
 	$stmt->bind_result($num_rows);
 	$limit_page=4;
+
 	$offset=0;
 	$stmt->execute();
 
@@ -140,7 +150,7 @@ $stmt=$conn->prepare("SELECT COUNT(*) FROM store");
 							<thead>
 								<tr>
 								   <th><input class="check-all" type="checkbox" /></th>
-
+								   <th>Id</th>
 								   <th>Name</th>
 								   <th>Price</th>
 								   <th>Image</th>
@@ -184,16 +194,50 @@ $stmt=$conn->prepare("SELECT COUNT(*) FROM store");
 									</td>
 								</tr>
 							</tfoot>
+
+
+
 						 
 							<tbody>
-							<?php foreach ($products as $key => $value): ?>
+							<?php if(isset($_GET['category'])):?>
+							<?php foreach ($category_product as $key => $value): ?>
 								<tr>
+
+									
+									<td><input type="checkbox" /></td>
+
+									<td><strong><?php echo $category_product[$key]['category'];?></strong></td>
+								<td><strong><?php echo $category_product[$key]['id'];?></strong></td>
+								<td><strong><?php echo $category_product[$key]['name'];?></strong></td>
+									<td><strong><?php echo $category_product[$key]['price'];?></strong></td>
+									<td><img style="width: 150px;height: 200px;" src='../uploads/images/<?php echo $category_product['key']['image'];?>'  ></td>
+									<td><?php echo $value['dropdown']; ?></td>
+
+
+
+									<td>
+										<!-- Icons -->
+										 <a href="addproduct.php?edit=<?php echo $category_product['key']['id']; ?>" title="Edit"><img src="resources/images/icons/pencil.png" alt="Edit" /></a>
+										 <a href="manage.php?dlid=<?php echo $category_product['key']['id']; ?>"  title="Delete"><img src="resources/images/icons/cross.png" alt="Delete" /></a> 
+										 <a href="#" title="Edit Meta"><img src="resources/images/icons/hammer_screwdriver.png" alt="Edit Meta" /></a>
+									</td>
+									</tr>
+									<?php endforeach;?>
+									<?php endif;?>
+								
+									
+
+
+
+
+								<?php foreach ($products as $key => $value): ?>
+									<tr>
 
 									
 									<td><input type="checkbox" /></td>
 									<td><?php echo $value['name']; ?></td>
 									<td><a href="#" title="title"><?php echo $value['price']; ?></a></td>
-									<td><img style="width: 90px;height: 50px;" src='../uploads/images/<?php echo $value['image'];?>'  ></td>
+									<td><img style="width: 150px;height: 200px;" src='../uploads/images/<?php echo $value['image'];?>'  ></td>
 									<td><?php echo $value['dropdown']; ?></td>
 
 
@@ -209,7 +253,6 @@ $stmt=$conn->prepare("SELECT COUNT(*) FROM store");
 								
 								</tr>
 								<?php endforeach; ?>
-								
 									
 								
 							</tbody>

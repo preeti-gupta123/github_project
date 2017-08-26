@@ -64,35 +64,45 @@
 				
 
 
-				<li><?php if(isset($_GET['category']))
-					{
-					echo "<a href='#' class='nav-top-item current'>
-						Categories
-					</a>";
-				}
-					
-				 else {
-					# code...
-					echo "<a href='#' class='nav-top-item'>
-						Categories
-					</a>";
-				}
-				?>
+
 
 
 				
-				
+				<li>
+					<a href="#" class="nav-top-item">
+						Categories
+					</a>
 					<ul>
-					<li><a href="category.php"?category=Cosmetic">Cosmetics</a></li>
-						<li><a href="category.php"?category=Saree">Saree</a></li>
-
-						<li><a href="category.php"?category=dress">Dress</a></li>
-					
+					<li><a href="#">Dresses</a></li>
+						<li><a href="#">Cosmetics</a></li>
+						<li><a href="#">Sports</a></li>
+						<li><a href="#">Mobiles</a></li>
 					</ul>
 					
-			
+				</li>
 				
+				<li>
+					<a href="#" class="nav-top-item">
+					Tags
+					</a>
+					<ul>
+						<li><a href="#">Upload Images</a></li>
+						<li><a href="#">Manage Galleries</a></li>
+						<li><a href="#">Manage Albums</a></li>
+						<li><a href="#">Gallery Settings</a></li>
+					</ul>
+				</li>
 				
+				<li>
+					<a href="#" class="nav-top-item">
+						Events Calendar
+					</a>
+					<ul>
+						<li><a href="#">Calendar Overview</a></li>
+						<li><a href="#">Add a new Event</a></li>
+						<li><a href="#">Calendar Settings</a></li>
+					</ul>
+				</li>
 				
 				<li>
 					<a href="#" class="nav-top-item">

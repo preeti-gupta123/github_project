@@ -125,15 +125,11 @@ if(isset($_GET['edit']))
 									<input type="radio" name="radio2" /> This is another radio button
 								</p>-->
 								
-									
 								<p>
 									<label>Select Category</label>              
 									<select name="dropdown" class="small-input">
-										<option value=""></option>
-										<option value="Cosmetic"  value="Cosmetic" >Cosmetics</option>
-										<option value="dress"  value="dress" >Dress</option>
-										<option value="Saree"  value="Saree" >Saree</option>
-										
+										<option value="Sports">Sports</option>
+										<option value="Electronics">Electronics</option>
 										<!--<option value="option3">Option 3</option>
 										<option value="option4">Option 4</option>-->
 									</select> 

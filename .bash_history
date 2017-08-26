@@ -72,3 +72,31 @@ git add .
 git commit -m "initial-commit"
 git push -u origin master
 git status
+git add git 
+git status
+git commit -m "abc"
+push -u origin master
+push - u origin master
+git status
+git add github
+git add .
+github git add
+git add github
+git status
+git commit - m "base"
+git add github
+Readme.txt
+git add Readme.txt
+git add hub
+git status
+git add .
+git commit - m "basic"
+$ git commit - m "basic"
+git commit -m "basic"
+push -u origin master
+git add store
+git status
+git add .
+git add.
+git commit -m "sto"
+push -u origin master

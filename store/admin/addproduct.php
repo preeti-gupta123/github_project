@@ -128,8 +128,11 @@ if(isset($_GET['edit']))
 								<p>
 									<label>Select Category</label>              
 									<select name="dropdown" class="small-input">
-										<option value="Sports">Sports</option>
-										<option value="Electronics">Electronics</option>
+										<option value=""></option>
+										<option value="Cosmetic"  value="Cosmetic" >Sports</option>
+										<option value="dress"  value="dress" >Dress</option>
+										<option value="Saree"  value="Saree" >Saree</option>
+										
 										<!--<option value="option3">Option 3</option>
 										<option value="option4">Option 4</option>-->
 									</select> 
